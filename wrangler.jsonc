@@ -12,9 +12,7 @@
     {
       "binding": "DB",
       "database_name": "smartshift-db",
-      // TODO(deploy): แทนที่ด้วย id จริงหลัง `wrangler d1 create smartshift-db`
-      // ค่านี้ใช้ได้กับการ dev/migrate แบบ --local เท่านั้น
-      "database_id": "local-smartshift-db"
+      "database_id": "9d891e2d-ea9d-4c9b-a8b0-d712ae625d07"
     }
   ]
 }
