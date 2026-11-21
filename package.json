@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "dev": "next dev",
     "build": "next build",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
