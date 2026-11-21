@@ -4,6 +4,7 @@
 Next.js (App Router) + Cloudflare D1 + Drizzle ORM บน Cloudflare Workers ผ่าน OpenNext
 
 สถานะปัจจุบัน: **เฟส 1 (MVP)** — ดูตารางบนมือถือ, login ด้วย PIN, ตารางตัวอย่าง ต.ค.–พ.ย. 2569
+Production: https://smart-shift.firman-lasaman.workers.dev (worker `smart-shift`, D1 `smartshift-db`)
 เฟสถัดไป: ตัวจัดเวรอัตโนมัติ (ดูแผนในประวัติการวางแผน) — ยังไม่รวมในโค้ดนี้
 
 ## เริ่มใช้งานในเครื่อง
