@@ -40,14 +40,22 @@ export default async function MyPage({ searchParams }: Props) {
           <h1 className="text-lg font-bold text-slate-900">
             {targetId === session.staffId ? "ตารางของฉัน" : `ตารางของ ${target?.name ?? ""}`}
           </h1>
-          <form method="post" action="/api/auth/logout">
-            <button
-              type="submit"
+          <div className="flex items-center gap-3">
+            <Link
+              href="/pin"
               className="text-sm text-slate-500 underline underline-offset-2"
             >
-              ออกจากระบบ
-            </button>
-          </form>
+              เปลี่ยน PIN
+            </Link>
+            <form method="post" action="/api/auth/logout">
+              <button
+                type="submit"
+                className="text-sm text-slate-500 underline underline-offset-2"
+              >
+                ออกจากระบบ
+              </button>
+            </form>
+          </div>
         </div>
         <MonthPicker month={month} basePath="/my" extra={{ staff: targetId === session.staffId ? undefined : targetId }} />
         <StaffSelect current={targetId} options={view.staff} month={month} />

@@ -7,6 +7,13 @@
 const ITERATIONS = 100_000;
 const KEY_BITS = 256;
 
+/** PIN = ตัวเลข 6 หลัก (ใช้ตอน seed, login และเปลี่ยน PIN) */
+export const PIN_LENGTH = 6;
+
+export function isValidPin(pin: string): boolean {
+  return pin.length === PIN_LENGTH && /^\d+$/.test(pin);
+}
+
 const encoder = new TextEncoder();
 
 function toHex(bytes: Uint8Array): string {
