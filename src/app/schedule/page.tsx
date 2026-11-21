@@ -60,7 +60,7 @@ export default async function SchedulePage({
 
       {view.exists ? (
         <>
-          <MonthTable view={view} />
+          <MonthTable view={view} highlightStaffId={session.staffId} />
           <TableFooter
             legend={legend}
             view={view}
