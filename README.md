@@ -40,8 +40,9 @@ npm run deploy                           # opennextjs-cloudflare build && deploy
 
 หมายเหตุ:
 - `wrangler.jsonc` ใช้ `database_id: local-smartshift-db` เป็นค่าชั่วคราวสำหรับ `--local` เท่านั้น ต้องแทนด้วย id จริงก่อน deploy
-- เบอร์โทรยังว่างใน seed — ใส่ภายหลังผ่านหน้า Admin (เฟสถัดไป)
+- เบอร์โทรไม่อยู่ใน seed (ข้อมูลส่วนตัว) — เขียนลง D1 โดยตรงด้วย `wrangler d1 execute`; รัน seed ซ้ำจะล้างเบอร์โทร
 - สะกดชื่อบุคลากรอิงตาม prompt แบบฟอร์ม F-OPR-012 — ตรวจทานกับเอกสารจริงก่อนใช้ production
+- Workers Builds (auto-deploy): เชื่อม Git กับ worker `smart-shift` สาขา `main`, build command `npx opennextjs-cloudflare build`, deploy command `npx wrangler deploy`; ถ้า push แล้วไม่มี build ให้ตรวจ Git connection และ Build watch paths ใน dashboard
 
 ## โครงสร้าง
 
