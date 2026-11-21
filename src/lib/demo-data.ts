@@ -71,6 +71,8 @@ export const DEFAULT_SETTINGS: Record<string, unknown> = {
   smc_ring: [5, 6, 7, 8, 9, 10, 11],
   controller_name: "นางสาวนวลจันทร์ พลเสนา",
   controller_title: "นักเทคนิคการแพทย์ชำนาญการ",
+  organizer_name: "นางสาวเรียวลดา กัญญาบัณฑิตย์",
+  organizer_title: "นักเทคนิคการแพทย์ปฏิบัติการ",
 };
 
 /** วันหยุดนักขัตฤกษ์ (Admin แก้ไขได้จากหน้าจัดการ) */

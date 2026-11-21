@@ -1,11 +1,7 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { getSession } from "@/lib/auth/session";
-import {
-  getMonthView,
-  getSetting,
-  getShiftLegend,
-} from "@/lib/db/queries";
+import { getMonthView, getSetting } from "@/lib/db/queries";
 import { MonthPicker } from "@/components/schedule/month-picker";
 import { MonthTable } from "@/components/schedule/month-table";
 import { TableFooter } from "@/components/schedule/table-footer";
@@ -31,7 +27,10 @@ export default async function SchedulePage({
   const sp = await searchParams;
   const month = normalizeMonth(sp.month);
   const view = await getMonthView(month);
-  const legend = await getShiftLegend();
+  const organizerName =
+    (await getSetting<string>("organizer_name")) ?? "……………………";
+  const organizerTitle =
+    (await getSetting<string>("organizer_title")) ?? "……………………";
   const controllerName =
     (await getSetting<string>("controller_name")) ?? "……………………";
   const controllerTitle =
@@ -62,8 +61,9 @@ export default async function SchedulePage({
         <>
           <MonthTable view={view} highlightStaffId={session.staffId} />
           <TableFooter
-            legend={legend}
             view={view}
+            organizerName={organizerName}
+            organizerTitle={organizerTitle}
             controllerName={controllerName}
             controllerTitle={controllerTitle}
           />
