@@ -10,6 +10,24 @@ body {
   @apply bg-slate-50 text-slate-900 antialiased;
 }
 
+/* ---------- มือถือแนวนอน: ตัดขอบ/หัวเรื่องให้ตารางได้พื้นที่เต็ม ---------- */
+@media (orientation: landscape) and (max-height: 560px) {
+  .schedule-page {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+
+  .schedule-page > header {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .schedule-page .page-title {
+    margin-bottom: 0.25rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25 !important;
+  }
+}
+
 /* ---------- พิมพ์ A4 แนวนอน ตามแบบฟอร์ม F-OPR-012 ---------- */
 @media print {
   @page {

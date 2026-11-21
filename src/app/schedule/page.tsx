@@ -38,7 +38,7 @@ export default async function SchedulePage({
     (await getSetting<string>("controller_title")) ?? "นักเทคนิคการแพทย์ชำนาญการ";
 
   return (
-    <main className="print-full mx-auto max-w-6xl px-3 py-4">
+    <main className="schedule-page print-full w-full max-w-none px-2 py-3 sm:px-4">
       <header className="no-print mb-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
           <Link href="/my" className="text-sm text-slate-500 underline underline-offset-2">
@@ -51,7 +51,7 @@ export default async function SchedulePage({
         </div>
       </header>
 
-      <h1 className="print-block mb-2 text-center text-base font-bold text-slate-900">
+      <h1 className="page-title print-block mb-2 text-center text-base font-bold text-slate-900">
         ตารางปฏิบัติงานนอกเวลาราชการและวันหยุดราชการ
         <span className="ml-2 text-sm font-normal text-slate-600">
           กลุ่มงานเทคนิคการแพทย์ รพ.สมเด็จพระยุพราชกระนวน

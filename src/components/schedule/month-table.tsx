@@ -6,11 +6,11 @@ export function MonthTable({ view }: { view: MonthView }) {
   const today = todayISO();
 
   return (
-    <div className="overflow-x-auto rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
-      <table className="schedule-table min-w-max border-collapse text-center text-xs">
+    <div className="w-full overflow-x-auto rounded-xl bg-white shadow-sm ring-1 ring-slate-200">
+      <table className="schedule-table w-full min-w-max border-collapse text-center text-[13px]">
         <thead>
           <tr>
-            <th className="sticky left-0 top-0 z-30 min-w-40 border-b border-slate-300 bg-slate-100 px-2 py-2 text-left font-bold">
+            <th className="sticky left-0 top-0 z-30 min-w-36 border-b border-slate-300 bg-slate-100 px-3 py-2 text-left font-bold">
               ชื่อ-นามสกุล
             </th>
             {view.days.map((d) => (
@@ -18,7 +18,7 @@ export function MonthTable({ view }: { view: MonthView }) {
                 key={d.date}
                 title={d.holiday ?? undefined}
                 className={[
-                  "sticky top-0 z-20 w-8 border-b border-l border-slate-300 px-0.5 py-1 font-bold",
+                  "sticky top-0 z-20 min-w-9 border-b border-l border-slate-300 px-1 py-1.5 font-bold",
                   d.holiday ? "bg-amber-200" : d.weekend ? "bg-amber-100" : "bg-slate-100",
                   d.date === today ? "outline-2 outline-offset-[-2px] outline-indigo-500" : "",
                 ].join(" ")}
@@ -34,7 +34,7 @@ export function MonthTable({ view }: { view: MonthView }) {
             <tr key={s.id}>
               <th
                 scope="row"
-                className="sticky left-0 z-10 border-b border-r border-slate-200 bg-white px-2 py-1.5 text-left font-normal whitespace-nowrap"
+                className="sticky left-0 z-10 border-b border-r border-slate-200 bg-white px-3 py-2 text-left font-normal whitespace-nowrap"
               >
                 <span className="font-medium">{s.name}</span>
                 <span
@@ -69,7 +69,7 @@ export function MonthTable({ view }: { view: MonthView }) {
                   <td
                     key={d.date}
                     className={[
-                      "border-b border-l border-slate-200 px-0.5 py-1.5 whitespace-nowrap",
+                      "border-b border-l border-slate-200 px-1 py-2 whitespace-nowrap",
                       cellClass,
                       d.date === today ? "outline-2 outline-offset-[-2px] outline-indigo-500" : "",
                     ].join(" ")}
